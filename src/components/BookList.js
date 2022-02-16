@@ -1,8 +1,15 @@
 import React from 'react';
-class BookList extends React.Component{
-    render(){
+import Book from './Book';
+class BookList extends React.Component {
+    render() {
+        //console.log(this.props.books);
 
-        return <div>BOOKLIST</div>
+        const booklist = this.props.books.map((book, i ) => {
+            return <Book book={book}  
+                key={i}
+            />
+        })
+        return <div>{booklist}</div>
     }
 }
 export default BookList;
